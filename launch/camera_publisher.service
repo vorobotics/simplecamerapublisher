@@ -1,0 +1,12 @@
+[Unit]
+Description=Camera Publisher
+After=mav_control.service
+
+[Service]
+User=dcs_user
+ExecStartPre=/bin/sleep 10
+ExecStart=/usr/local/bin/camera_publisher.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
